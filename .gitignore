@@ -31,5 +31,8 @@ Thumbs.db
 # ---- Kotlin 编译缓存 ----
 .kotlin/
 
+# ---- Gradle Daemon JVM 工具链（构建时自动生成，含平台下载地址）----
+gradle/gradle-daemon-jvm.properties
+
 # ---- 调试临时文件 ----
 *.log
