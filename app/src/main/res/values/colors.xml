@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 图标底色：新版图标用 drawable 渐变背景，这里保留一个兜底纯色
+         （部分老启动器 / 第三方 ROM 会读这个颜色做底色） -->
+    <color name="ic_launcher_background">#0A0907</color>
+</resources>

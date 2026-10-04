@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ============================================================
+  图标前景：黑金「课表格阵」
+  ============================================================
+
+  设计意图：**一眼是课表，但不是日历**。
+
+  与日历的区别全在这几点：
+  - 日历 = 等分方格 + 顶部一条粗色带 + 数字；
+  - 这里是一个 **4×3 的金属格阵**，其中 9 格被「课程」占据，
+    且**刻意错落**（第一行只填 2 格、第二行右移、第三行填满），
+    呈现的是「一周课程疏密不均」的节奏，而不是整齐的日期格；
+  - 没有顶部横条、没有数字，彻底脱离日历的视觉符号。
+
+  配色（香槟金 → 暗金），全部在金色系内做明度层次：
+  - #FAF1CC / #F8EBBA —— 高光面，最亮
+  - #F0DFA6 / #D2B45C / #C6A852 —— 中间调
+  - #A08030 / #9A7A2C / #8E7028 / #745A20 —— 暗面，做纵深
+  仅靠明度差就能把八个块区分开，不需要引入第二种色相。
+
+  几何：网格严格等分（108 里 x/y 各 30→78，4 列 3 行），
+  每个色块在格内内缩 1.4、圆角 2.6 —— 这样块与块之间自然留出细缝，
+  看起来像嵌在金属格里的独立「课程条」。
+
+  安全区：内容控制在 30~78 之间。自适应图标会被裁成圆形/方形/水滴，
+  必须留够边距，否则极端裁切下边缘块会被切掉。
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- ================= 1. 格阵底纹（极淡金线） ================= -->
+    <!-- 4 列竖线 -->
+    <path android:strokeColor="#6E6E5C2A" android:strokeWidth="0.7"
+        android:pathData="M42,30 L42,78" />
+    <path android:strokeColor="#6E6E5C2A" android:strokeWidth="0.7"
+        android:pathData="M54,30 L54,78" />
+    <path android:strokeColor="#6E6E5C2A" android:strokeWidth="0.7"
+        android:pathData="M66,30 L66,78" />
+    <!-- 3 行横线（上下两边由外框负责） -->
+    <path android:strokeColor="#6E6E5C2A" android:strokeWidth="0.7"
+        android:pathData="M30,46 L78,46" />
+    <path android:strokeColor="#6E6E5C2A" android:strokeWidth="0.7"
+        android:pathData="M30,62 L78,62" />
+
+    <!-- ================= 2. 金色外框：一圈金属细边 ================= -->
+    <path
+        android:strokeColor="#937936"
+        android:strokeWidth="1.5"
+        android:pathData="M34.5,30 L73.5,30 A4.5,4.5 0 0 1 78,34.5 L78,73.5 A4.5,4.5 0 0 1 73.5,78 L34.5,78 A4.5,4.5 0 0 1 30,73.5 L30,34.5 A4.5,4.5 0 0 1 34.5,30 Z" />
+
+    <!-- ================= 3. 九个「课程」色块（错落分布） ================= -->
+
+    <!-- 行 1：左两格（亮 + 中），右侧留空 -->
+    <path android:pathData="M33.4,31.4h8.2a2.6,2.6 0 0 1 2.6,2.6v9.4a2.6,2.6 0 0 1 -2.6,2.6h-8.2a2.6,2.6 0 0 1 -2.6,-2.6v-9.4a2.6,2.6 0 0 1 2.6,-2.6z">
+        <aapt:attr xmlns:aapt="http://schemas.android.com/aapt" name="android:fillColor">
+            <gradient android:type="linear"
+                android:startX="30.8" android:startY="31.4"
+                android:endX="44.2" android:endY="46"
+                android:startColor="#FFFBE8" android:endColor="#EDDC9E" />
+        </aapt:attr>
+    </path>
+    <path android:pathData="M45.4,31.4h8.2a2.6,2.6 0 0 1 2.6,2.6v9.4a2.6,2.6 0 0 1 -2.6,2.6h-8.2a2.6,2.6 0 0 1 -2.6,-2.6v-9.4a2.6,2.6 0 0 1 2.6,-2.6z"
+        android:fillColor="#C6A852" />
+
+    <!-- 行 2：左两格（中 + 高亮） + 右一格（暗） -->
+    <path android:pathData="M33.4,47.4h8.2a2.6,2.6 0 0 1 2.6,2.6v9.4a2.6,2.6 0 0 1 -2.6,2.6h-8.2a2.6,2.6 0 0 1 -2.6,-2.6v-9.4a2.6,2.6 0 0 1 2.6,-2.6z"
+        android:fillColor="#F0DFA6" />
+    <path android:pathData="M45.4,47.4h8.2a2.6,2.6 0 0 1 2.6,2.6v9.4a2.6,2.6 0 0 1 -2.6,2.6h-8.2a2.6,2.6 0 0 1 -2.6,-2.6v-9.4a2.6,2.6 0 0 1 2.6,-2.6z">
+        <aapt:attr xmlns:aapt="http://schemas.android.com/aapt" name="android:fillColor">
+            <gradient android:type="linear"
+                android:startX="42.8" android:startY="47.4"
+                android:endX="56.2" android:endY="62"
+                android:startColor="#FFFCEF" android:endColor="#E4CE8C" />
+        </aapt:attr>
+    </path>
+    <path android:pathData="M57.4,47.4h8.2a2.6,2.6 0 0 1 2.6,2.6v9.4a2.6,2.6 0 0 1 -2.6,2.6h-8.2a2.6,2.6 0 0 1 -2.6,-2.6v-9.4a2.6,2.6 0 0 1 2.6,-2.6z"
+        android:fillColor="#A08030" />
+
+    <!-- 行 3：四格铺满，明暗从左到右递减，给整个图标一个「落点」 -->
+    <path android:pathData="M33.4,63.4h8.2a2.6,2.6 0 0 1 2.6,2.6v9.4a2.6,2.6 0 0 1 -2.6,2.6h-8.2a2.6,2.6 0 0 1 -2.6,-2.6v-9.4a2.6,2.6 0 0 1 2.6,-2.6z"
+        android:fillColor="#D2B45C" />
+    <path android:pathData="M45.4,63.4h8.2a2.6,2.6 0 0 1 2.6,2.6v9.4a2.6,2.6 0 0 1 -2.6,2.6h-8.2a2.6,2.6 0 0 1 -2.6,-2.6v-9.4a2.6,2.6 0 0 1 2.6,-2.6z"
+        android:fillColor="#8E7028" />
+    <path android:pathData="M57.4,63.4h8.2a2.6,2.6 0 0 1 2.6,2.6v9.4a2.6,2.6 0 0 1 -2.6,2.6h-8.2a2.6,2.6 0 0 1 -2.6,-2.6v-9.4a2.6,2.6 0 0 1 2.6,-2.6z"
+        android:fillColor="#9A7A2C" />
+    <path android:pathData="M69.4,63.4h5.2a2.6,2.6 0 0 1 2.6,2.6v9.4a2.6,2.6 0 0 1 -2.6,2.6h-5.2a2.6,2.6 0 0 1 -2.6,-2.6v-9.4a2.6,2.6 0 0 1 2.6,-2.6z"
+        android:fillColor="#745A20" />
+</vector>

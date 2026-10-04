@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  图标背景：深黑 + 中心偏上的径向暖光。
+
+  要点：
+  - 不用纯 #000 —— 纯黑在 OLED 上是「一个洞」，没有材质感；
+    中心提亮到 #2E291F（带暖调，红绿分量略高于蓝），和金同色系。
+  - 光心放在 (54,44) 而非正中：略偏上更符合自然光，也让下方的金色格阵更沉。
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <path android:pathData="M0,0h108v108h-108z">
+        <aapt:attr xmlns:aapt="http://schemas.android.com/aapt" name="android:fillColor">
+            <gradient
+                android:type="radial"
+                android:centerX="54"
+                android:centerY="44"
+                android:gradientRadius="82"
+                android:startColor="#2E291F"
+                android:centerColor="#171310"
+                android:endColor="#090807" />
+        </aapt:attr>
+    </path>
+</vector>
